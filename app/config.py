@@ -46,10 +46,8 @@ class Settings(BaseSettings):
     @field_validator("groq_api_key")
     @classmethod
     def api_key_must_be_set(cls, v: str) -> str:
-        if not v or v.startswith("your-key"):
-            raise ValueError(
-                "GROQ_API_KEY must be set. Get a free key at https://console.groq.com"
-            )
+        if (not v or v.startswith("your") or "your_groq_api_key_here" in v.lower()):
+            raise ValueError("GROQ_API_KEY must be set. Get a free key at https://console.groq.com")
         return v
 
 

@@ -4,13 +4,13 @@ uvicorn[standard]==0.30.6
 pydantic==2.8.2
 pydantic-settings==2.4.0
 
-# LLM — Groq free tier
-# Get your free API key at: https://console.groq.com
+# LLM — Groq free tier (get key at https://console.groq.com)
 groq==0.11.0
 
-# Semantic retrieval (FAISS backend)
-# CPU-only (works everywhere): faiss-cpu
-faiss-cpu==1.14.3
+# Semantic retrieval — optional FAISS backend
+# On Render free tier, RETRIEVAL_BACKEND=tfidf (no install needed)
+# For local use with FAISS: these are installed but only used if RETRIEVAL_BACKEND=faiss
+faiss-cpu==1.9.0
 sentence-transformers==3.1.1
 
 # Testing

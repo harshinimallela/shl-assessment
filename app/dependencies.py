@@ -26,7 +26,11 @@ from app.supervisor import Supervisor
 logger = logging.getLogger(__name__)
 
 _PROMPTS_DIR = Path(__file__).parent / "prompts"
-_CATALOG_PATH = Path("catalog.json")
+
+# Resolve catalog.json relative to the repo root (one level above app/).
+# Using Path(__file__) means this works regardless of the working directory
+# at startup — critical on Render where CWD is /opt/render/project/src.
+_CATALOG_PATH = Path(__file__).parent.parent / "catalog.json"
 
 
 @lru_cache(maxsize=1)
