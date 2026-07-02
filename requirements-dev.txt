@@ -1,0 +1,19 @@
+# Install alongside requirements.txt:
+# pip install -r requirements.txt -r requirements-dev.txt
+
+-r requirements.txt
+
+# Linting and formatting
+ruff==0.6.9
+black==24.10.0
+mypy==1.11.2
+
+# Type stubs
+types-requests==2.32.0.20240914
+
+# Testing extras
+pytest-cov==5.0.0
+pytest-xdist==3.6.1     # parallel test execution
+
+# Pre-commit
+pre-commit==3.8.0
